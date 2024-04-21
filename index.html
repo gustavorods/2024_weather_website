@@ -10,15 +10,66 @@
 <body>
     
     <div class="container">
+        
+        <!-- search bar -->
         <div class="searchBar">
             <input type="text" id="writeBar">
             <button type="submit" id="submit">
-                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #13293d"></i>
             </button>
         </div>
-        <div class="weatherInfos">
+
+        <!-- City name, and temp -->
+        <div class="weatherInfos1">
             <h2 id = "cityName">São Paulo</h2>
-            <h2 id="temp">11°C</h2>
+            <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="Weather Image">
+            <h2 id="temp">11<sup>°C </sup></h2>
+        </div>
+        
+        <!-- Separador -->
+        <hr class="line">
+
+        <!-- More informations -->
+        <div class="weatherInfos2">
+            <div class="card">
+                <div class="divIcon">
+                    <i class="fa-solid fa-temperature-arrow-down" style="color: #13293d;"></i>                
+                </div>
+                <div class="divTitleAndSubtitle">
+                    <span class="title">Temp. mínima</span>
+                    <span class="subtitle" id="minTemp">11 <sup>°C </sup></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="divIcon">
+                    <i class="fa-solid fa-temperature-arrow-up" style="color: #13293d;"></i>                
+                </div>
+                <div class="divTitleAndSubtitle">
+                    <span class="title">Temp. máxima</span>
+                    <span class="subtitle" id="maxTemp">11 <sup>°C </sup></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="divIcon">
+                    <i class="fa-solid fa-droplet" style="color: #13293d;"></i>                
+                </div>
+                <div class="divTitleAndSubtitle">
+                    <span class="title">Umidade</span>
+                    <span class="subtitle" id="moisture">70%</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="divIcon">
+                    <i class="fa-solid fa-wind" style="color: #13293d;"></i>                
+                </div>
+                <div class="divTitleAndSubtitle">
+                    <span class="title">Vento</span>
+                    <span class="subtitle" id="wind">2.4km/h</span>
+                </div>
+            </div>
         </div>
     </div>
 

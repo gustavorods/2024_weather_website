@@ -23,10 +23,17 @@ document.querySelector('#submit ').addEventListener('click', async (event) => {
 function showData (data) {
     // Nome da Cidade
     let cityName = document.querySelector("#cityName");
-    let cityTemp = document.querySelector("#temp")
+    let cityTemp = document.querySelector("#temp");
+    let cityMinTemp = document.querySelector("#minTemp");
+    let cityMaxTemp = document.querySelector("#maxTemp");
+    let moisture = document.querySelector("#moisture");
+    let wind = document.querySelector("#wind");
     cityName.innerHTML = data.name; 
-    cityTemp.innerHTML = `${parseInt(data.main.temp)} C°`;
-
+    cityTemp.innerHTML = `${parseInt(data.main.temp)} <sup>°C </sup>`;
+    cityMinTemp.innerHTML = `${parseInt(data.main.temp_min)} <sup>°C </sup>`;
+    cityMaxTemp.innerHTML = `${parseInt(data.main.temp_max)} <sup>°C </sup>`;
+    moisture.innerHTML = `${parseInt(data.main.humidity)}%`;
+    wind.innerHTML = `${parseInt(data.wind.speed)}km/h`;
 }   
 
 

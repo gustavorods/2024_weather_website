@@ -11,11 +11,13 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: #13293d;
 }
 
 .container {
-    background-color: #edf0f0;
+    background-color: #d3d5d7;
     height: auto;
+    width: 450px;
     padding: 20px;
     border-radius: 20px;
     border: 1px solid black;
@@ -47,9 +49,68 @@ body {
     cursor: pointer;
 }
 
-.weatherInfos {
+.weatherInfos1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#cityName {
+    color: #13293d;
+}
+
+#temp {
+    color: #13293d;
+    font-size: 40px;
+    margin-left: 25px;
+}
+
+.line {
+    width: 80%;
+    border: 1px solid black;
+    margin: 20px 0 20px 0px;
+}
+
+.weatherInfos2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    place-items: center;
+    gap: 10px;
+}
+
+.card {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 45px -16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 45px -16px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 45px -16px rgba(0,0,0,0.75);
+    color: #13293d;
+    width: 150px;
+}
+
+.divIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+}
+
+.divTitleAndSubtitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.subtitle {
+    font-size: 14px;
 }
