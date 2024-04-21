@@ -15,7 +15,18 @@ document.querySelector('#submit ').addEventListener('click', async (event) => {
     const result  = await fetch(urlApi);
     const json = await result.json();
 
+    //Apresentando os dados
+    showData(json)
     console.log(json)
 } )
+
+function showData (data) {
+    // Nome da Cidade
+    let cityName = document.querySelector("#cityName");
+    let cityTemp = document.querySelector("#temp")
+    cityName.innerHTML = data.name; 
+    cityTemp.innerHTML = `${parseInt(data.main.temp)} C°`;
+
+}   
 
 
