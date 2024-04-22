@@ -66,6 +66,10 @@ body {
     margin-left: 25px;
 }
 
+#description {
+    color: #13293d;
+}
+
 .line {
     width: 80%;
     border: 1px solid black;
