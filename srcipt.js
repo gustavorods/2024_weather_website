@@ -1,5 +1,5 @@
 document.querySelector('#submit ').addEventListener('click', async (event) => {
-    // verificando se exite um nome
+    // checking if a name exists
     const writeBar = document.querySelector('#writeBar').value;
 
     if(!writeBar) {
@@ -8,20 +8,16 @@ document.querySelector('#submit ').addEventListener('click', async (event) => {
     }
 
 
-    // Pegando os dados 
-    const apiKey = "40bf2c04916cd990ff1c3ee9b851806f";
-    const urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(writeBar)}&appid=${apiKey}&units=metric&lang=pt_br`;
-
-    const result  = await fetch(urlApi);
-    const json = await result.json();
+    // getting the data of weather
+    let weatherinfos = await request(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(document.querySelector('#writeBar').value)}&appid=40bf2c04916cd990ff1c3ee9b851806f&units=metric&lang=pt_br`)
+    let countryFlag = document.querySelector(".countryFlag")
 
     //Apresentando os dados
-    showData(json)
-    console.log(json)
+    showData(weatherinfos, countryFlag)
 } )
 
-function showData (data) {
-    // Nome da Cidade
+// Show the data
+function showData (data, flag) {
     let cityName = document.querySelector("#cityName");
     let cityTemp = document.querySelector("#temp");
     let cityMinTemp = document.querySelector("#minTemp");
@@ -31,6 +27,7 @@ function showData (data) {
     let description = document.querySelector("#description");
     let imageWeatherConditions = document.querySelector("#weatherConditions");
     cityName.innerHTML = data.name; 
+    flag.innerHTML = `<img src="https://flagsapi.com/${data.sys.country}/flat/64.png" class="countryFlag">`
     cityTemp.innerHTML = `${parseInt(data.main.temp)} <sup>°C </sup>`;
     cityMinTemp.innerHTML = `${parseInt(data.main.temp_min)} <sup>°C </sup>`;
     cityMaxTemp.innerHTML = `${parseInt(data.main.temp_max)} <sup>°C </sup>`;
@@ -40,4 +37,11 @@ function showData (data) {
     imageWeatherConditions.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
 }   
 
+
+// making request
+async function request(url) {
+    const result  = await fetch(url);
+    const json = await result.json();
+    return json
+}
 

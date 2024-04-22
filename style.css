@@ -56,8 +56,19 @@ body {
     flex-direction: column;
 }
 
+.countryAndFlag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
 #cityName {
     color: #13293d;
+}
+
+.countryFlag {
+    width: 45px;
 }
 
 #temp {
